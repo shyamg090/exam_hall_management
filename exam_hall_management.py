@@ -198,7 +198,7 @@ search_entry.grid(row=0, column=1)
 search_button = tk.Button(search_frame, text="Search", command=search_students, bg="#F2BE22", fg="#080202", font=("Arial", 15))
 search_button.grid(row=0, column=2, padx=8)
 
-display_text = tk.Text(root, height=8, width=50, bg="#000000", fg="#080202", bd=0, font=("Arial", 15))
+display_text = tk.Text(root, height=8, width=50, bg="#F2BE22", fg="#080202", bd=0, font=("Arial", 15))
 display_text.pack(pady=8, padx=8)
 
 # Create and place buttons for edit and delete
