@@ -1,3 +1,4 @@
+from tkinter import *
 import tkinter as tk
 import tkinter.messagebox as messagebox
 
@@ -131,7 +132,9 @@ root.title("Student Exam Hall Management")
 # Set window size and position
 window_width = 600
 window_height = 400
-root["bg"]="#22A699"
+filename=PhotoImage(file="C://Users//samsh//OneDrive//Desktop//Exam_Hall_Management//sce.png")
+background_label= Label(root,image=filename)
+background_label.place(x=0,y=0,relwidth=1,relheight=1)
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 x = (screen_width // 2) - (window_width // 2)
@@ -139,74 +142,74 @@ y = (screen_height // 2) - (window_height // 2)
 root.geometry(f"{window_width}x{window_height}+{x}+{y}")
 
 # Create and place widgets for login
-login_frame = tk.LabelFrame(root, text="Login", padx=8, pady=8, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+login_frame = tk.LabelFrame(root, text="Login", padx=8, pady=8, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 login_frame.pack(pady=8)
 
-username_label = tk.Label(login_frame, text="Username:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+username_label = tk.Label(login_frame, text="Username:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 username_label.grid(row=0, column=0, sticky=tk.E)
 username_entry = tk.Entry(login_frame, font=("Arial", 15))
 username_entry.grid(row=0, column=1)
 
-password_label = tk.Label(login_frame, text="Password:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+password_label = tk.Label(login_frame, text="Password:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 password_label.grid(row=1, column=0, sticky=tk.E)
 password_entry = tk.Entry(login_frame, show="*", font=("Arial", 15))
 password_entry.grid(row=1, column=1)
 
-login_button = tk.Button(login_frame, text="Login", command=login, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+login_button = tk.Button(login_frame, text="Login", command=login, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 login_button.grid(row=2, column=1, pady=8)
 
 # Create and place widgets for student registration
-registration_frame = tk.LabelFrame(root, text="Student Registration", padx=8, pady=8, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+registration_frame = tk.LabelFrame(root, text="Student Registration", padx=8, pady=8, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 registration_frame.pack(pady=8)
 
-usn_label = tk.Label(registration_frame, text="USN:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+usn_label = tk.Label(registration_frame, text="USN:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 usn_label.grid(row=0, column=0, sticky=tk.E)
 usn_entry = tk.Entry(registration_frame, font=("Arial", 15))
 usn_entry.grid(row=0, column=1)
 
-name_label = tk.Label(registration_frame, text="Name:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+name_label = tk.Label(registration_frame, text="Name:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 name_label.grid(row=1, column=0, sticky=tk.E)
 name_entry = tk.Entry(registration_frame, font=("Arial", 15))
 name_entry.grid(row=1, column=1)
 
-department_label = tk.Label(registration_frame, text="Department:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+department_label = tk.Label(registration_frame, text="Department:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 department_label.grid(row=2, column=0, sticky=tk.E)
 department_entry = tk.Entry(registration_frame, font=("Arial", 15))
 department_entry.grid(row=2, column=1)
 
-room_label = tk.Label(registration_frame, text="Room:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+room_label = tk.Label(registration_frame, text="Room:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 room_label.grid(row=3, column=0, sticky=tk.E)
 room_entry = tk.Entry(registration_frame, font=("Arial", 15))
 room_entry.grid(row=3, column=1)
 
-register_button = tk.Button(registration_frame, text="Register", command=register_student, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+register_button = tk.Button(registration_frame, text="Register", command=register_student, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 register_button.grid(row=4, column=1, pady=8)
 register_button.config(state=tk.DISABLED)
 
 # Set registration frame background color
-registration_frame.configure(bg="#F2BE22")
+registration_frame.configure(bg="#F2F7A1")
 
 # Create and place widgets for search and display
-search_frame = tk.LabelFrame(root, text="Search", padx=8, pady=8, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+search_frame = tk.LabelFrame(root, text="Search", padx=8, pady=8, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 search_frame.pack(pady=8)
 
-search_label = tk.Label(search_frame, text="Search by USN or Name:", bg="#F2BE22", fg="#080202", font=("Arial", 15))
+search_label = tk.Label(search_frame, text="Search by USN or Name:", bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 search_label.grid(row=0, column=0, sticky=tk.E)
 search_entry = tk.Entry(search_frame, font=("Arial", 15))
 search_entry.grid(row=0, column=1)
 
-search_button = tk.Button(search_frame, text="Search", command=search_students, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+search_button = tk.Button(search_frame, text="Search", command=search_students, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 search_button.grid(row=0, column=2, padx=8)
 
-display_text = tk.Text(root, height=8, width=50, bg="#F2BE22", fg="#080202", bd=0, font=("Arial", 15))
+display_text = tk.Text(root, height=8, width=50, bg="white", fg="#080202", bd=0, font=("Arial", 15))
 display_text.pack(pady=8, padx=8)
 
 # Create and place buttons for edit and delete
-edit_button = tk.Button(root, text="Edit", command=edit_student, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+edit_button = tk.Button(root, text="Edit", command=edit_student, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 edit_button.pack(pady=8)
 edit_button.config(state=tk.DISABLED)
 
-delete_button = tk.Button(root, text="Delete", command=delete_student, bg="#F2BE22", fg="#080202", font=("Arial", 15))
+delete_button = tk.Button(root, text="Delete", command=delete_student, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 delete_button.pack(pady=8)
 delete_button.config(state=tk.DISABLED)
 
