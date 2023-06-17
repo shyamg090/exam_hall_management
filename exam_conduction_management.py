@@ -7,14 +7,14 @@ def login():
     username = username_entry.get()
     password = password_entry.get()
 
-    if username == "admin" and password == "admin123":
+    if username == "admin" and password == "admin":
         # Admin role
-        messagebox.showinfo("Login Successful", "Welcome, Admin!")
+        messagebox.showinfo("Login Successful", "Welcome "+ username)
         enable_admin_features()
-    elif username == "student" and password == "student123":
+    elif username == "student" and password == "student":
         # Student role
-        messagebox.showinfo("Login Successful", "Welcome, Student!")
-        enable_student_features()
+        messagebox.showinfo("Login Successful", "Welcome "+username)
+        # enable_student_features()
     else:
         messagebox.showerror("Login Failed", "Invalid username or password.")
 
@@ -25,8 +25,8 @@ def enable_admin_features():
     delete_button.config(state=tk.NORMAL)
 
 # Function to enable features for the student role
-def enable_student_features():
-    register_button.config(state=tk.NORMAL)
+# def enable_student_features():
+    # register_button.config(state=tk.NORMAL)
 
 # Function to handle the registration of a new student
 def register_student():
@@ -127,12 +127,12 @@ def clear_entries():
 
 # Create the main window
 root = tk.Tk()
-root.title("Student Exam Hall Management")
+root.title("Exam Conduction Management")
 
 # Set window size and position
 window_width = 600
 window_height = 400
-filename=PhotoImage(file="C://Users//samsh//OneDrive//Desktop//Exam_Hall_Management//sce.png")
+filename=PhotoImage(file="C://Users//samsh//OneDrive//Desktop//Exam_Conduction_Management//sce.png")
 background_label= Label(root,image=filename)
 background_label.place(x=0,y=0,relwidth=1,relheight=1)
 screen_width = root.winfo_screenwidth()
@@ -201,7 +201,7 @@ search_entry.grid(row=0, column=1)
 search_button = tk.Button(search_frame, text="Search", command=search_students, bg="#F2F7A1", fg="#080202", font=("Arial", 15))
 search_button.grid(row=0, column=2, padx=8)
 
-display_text = tk.Text(root, height=8, width=50, bg="white", fg="#080202", bd=0, font=("Arial", 15))
+display_text = tk.Text(root, height=8, width=50, bg="#F2F7A1", fg="#080202", bd="0", font=("Arial", 15))
 display_text.pack(pady=8, padx=8)
 
 # Create and place buttons for edit and delete
