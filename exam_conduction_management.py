@@ -76,6 +76,8 @@ def search_students():
         messagebox.showwarning("Warning", "Please enter a search query.")
 
 # Function to handle the editing and updating of student records
+
+
 def edit_student():
     selected_student = display_text.get(tk.SEL_FIRST, tk.SEL_LAST)
     selected_student_index = display_text.tag_ranges(tk.SEL)
@@ -92,8 +94,19 @@ def edit_student():
         room_entry.insert(tk.END, room)
 
         display_text.delete(selected_student_index[0], selected_student_index[1])
+
+        # Update the data in the file
+        with open("examHall.txt", "r") as file:
+            lines = file.readlines()
+
+        with open("examHall.txt", "w") as file:
+            for line in lines:
+                if line.strip() != selected_student:
+                    file.write(line)
     else:
         messagebox.showwarning("Warning", "Please select a student to edit.")
+
+
 
 # Function to handle the deletion of student records
 def delete_student():
@@ -132,7 +145,7 @@ root.title("Exam Conduction Management")
 # Set window size and position
 window_width = 600
 window_height = 400
-filename=PhotoImage(file="C://Users//samsh//OneDrive//Desktop//Exam_Conduction_Management//sce.png")
+filename=PhotoImage(file="sce.png")
 background_label= Label(root,image=filename)
 background_label.place(x=0,y=0,relwidth=1,relheight=1)
 screen_width = root.winfo_screenwidth()
