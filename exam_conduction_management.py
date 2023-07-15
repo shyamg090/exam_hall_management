@@ -10,23 +10,37 @@ def login():
     if username == "admin" and password == "admin":
         # Admin role
         messagebox.showinfo("Login Successful", "Welcome "+ username)
+        clear_entries_1()
         enable_admin_features()
     elif username == "student" and password == "student":
         # Student role
         messagebox.showinfo("Login Successful", "Welcome "+username)
-        # enable_student_features()
+        enable_student_features()
+        clear_entries_1()
     else:
         messagebox.showerror("Login Failed", "Invalid username or password.")
+        enable_default_features()
+        clear_entries_1()
 
 # Function to enable features for the admin role
 def enable_admin_features():
     register_button.config(state=tk.NORMAL)
     edit_button.config(state=tk.NORMAL)
     delete_button.config(state=tk.NORMAL)
+    search_button.config(state=tk.NORMAL)
 
 # Function to enable features for the student role
-# def enable_student_features():
-    # register_button.config(state=tk.NORMAL)
+def enable_student_features():
+    register_button.config(state=tk.DISABLED)
+    edit_button.config(state=tk.DISABLED)
+    delete_button.config(state=tk.DISABLED)
+
+# Function to enable default features
+def enable_default_features():
+    register_button.config(state=tk.DISABLED)
+    edit_button.config(state=tk.DISABLED)
+    delete_button.config(state=tk.DISABLED)
+    search_button.config(state=tk.DISABLED)
 
 # Function to handle the registration of a new student
 def register_student():
@@ -137,6 +151,10 @@ def clear_entries():
     name_entry.delete(0, tk.END)
     department_entry.delete(0, tk.END)
     room_entry.delete(0, tk.END)
+
+def clear_entries_1():
+    username_entry.delete(0, tk.END)
+    password_entry.delete(0, tk.END)      
 
 # Create the main window
 root = tk.Tk()
