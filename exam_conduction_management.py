@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 from tkinter import *
 import tkinter as tk
 import tkinter.messagebox as messagebox
@@ -277,4 +275,3 @@ display_text.configure(font=("Times New Roman", 14))
 
 # Run the main event loop
 root.mainloop()
->>>>>>> d1183c0 (changed some code part)
